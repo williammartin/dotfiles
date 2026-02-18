@@ -14,6 +14,14 @@ Standardized macOS machine setup using:
 
 ## Quick start (new machine)
 
+One-liner from a bare machine:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/williammartin/dotfiles/johnmog-dotfiles-bootstrap/install.sh | bash
+```
+
+Manual:
+
 ```bash
 git clone <your-repo-url> ~/dotfiles
 cd ~/dotfiles
