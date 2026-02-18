@@ -46,3 +46,12 @@ Dry run:
 - Add/remove zsh plugins:
   - edit `chezmoi/dot_zsh_plugins.txt`
   - run `chezmoi apply`
+- Pull in local Copilot skills:
+  - run `./scripts/import-copilot-skills.sh`
+  - add `--delete` if you want to prune files removed from `~/.copilot/skills`
+  - commit `chezmoi/private_dot_copilot/private_skills/*`
+  - run `chezmoi apply` on new machines
+- Pull in local gh helper scripts (`fr.sh`, `worktree.sh`):
+  - run `./scripts/import-gh-scripts.sh`
+  - commit `chezmoi/private_dot_local/private_bin/executable_*.sh`
+  - run `chezmoi apply` on new machines
