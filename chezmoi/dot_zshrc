@@ -1,0 +1,16 @@
+export EDITOR=nvim
+export VISUAL=nvim
+
+if command -v rg >/dev/null 2>&1; then
+  alias grep='rg'
+fi
+
+ANTIDOTE_HOME="${ZDOTDIR:-$HOME}/.antidote"
+ANTIDOTE_PLUGINS_FILE="${ZDOTDIR:-$HOME}/.zsh_plugins.txt"
+
+if [[ ! -f "$ANTIDOTE_HOME/antidote.zsh" ]]; then
+  git clone --depth=1 https://github.com/mattmc3/antidote.git "$ANTIDOTE_HOME"
+fi
+
+source "$ANTIDOTE_HOME/antidote.zsh"
+[[ -f "$ANTIDOTE_PLUGINS_FILE" ]] && antidote load "$ANTIDOTE_PLUGINS_FILE"
