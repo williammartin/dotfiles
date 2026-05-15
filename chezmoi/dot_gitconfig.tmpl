@@ -1,6 +1,6 @@
 [user]
-  name = {{ promptStringOnce "git_name" "Git user.name" }}
-  email = {{ promptStringOnce "git_email" "Git user.email" }}
+  name = {{ .git_name }}
+  email = {{ .git_email }}
 
 [init]
   defaultBranch = main
