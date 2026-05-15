@@ -1,6 +1,6 @@
 ---
 name: smart-commit
-description: Commits changes with concise, clear commit messages (under 52 characters). Automatically creates feature branches when committing from main/master branches, using simple names like 'johnmog-area-change'. Use when you want to commit changes with a meaningful message or need to safely work off main.
+description: Commits changes with concise, clear commit messages (under 52 characters). Automatically creates feature branches when committing from main/master branches, using simple names like 'wm-area-change'. Use when you want to commit changes with a meaningful message or need to safely work off main.
 ---
 
 # Smart Commit
@@ -35,11 +35,11 @@ git branch --show-current
    git add .
    ```
 2. Analyze staged changes to generate a simple branch name
-3. Create branch with format: `johnmog-<area>-<change>`
-   - Example: `johnmog-auth-validation`
-   - Example: `johnmog-cache-fix`
-   - Example: `johnmog-api-client`
-   - Example: `johnmog-sentry-rollup`
+3. Create branch with format: `wm-<area>-<change>`
+   - Example: `wm-auth-validation`
+   - Example: `wm-cache-fix`
+   - Example: `wm-api-client`
+   - Example: `wm-sentry-rollup`
 4. Switch to the new branch
 5. Proceed with commit
 
@@ -60,18 +60,18 @@ Analyze the staged changes using `git diff --cached` to generate a simple, clear
 
 **Good Examples:**
 ```
-add user authentication validation
-fix cache undefined access bug
-simplify exception rollup logic
-update API client with retry logic
-remove unused rollup check registry
-improve error logging with kvp fields
+Add user authentication validation
+Fix cache undefined access bug
+Simplify exception rollup logic
+Update API client with retry logic
+Remove unused rollup check registry
+Improve error logging with kvp fields
 ```
 
 **Bad Examples:**
 ```
 feat(auth): add user authentication validation  ❌ (too long, uses prefix)
-Fix bug                                          ❌ (too vague, capitalized)
+fix bug                                          ❌ (too vague, not capitalized)
 refactor(observability): simplify exceptions    ❌ (uses prefix)
 Added new feature for user authentication       ❌ (past tense, too long)
 ```
@@ -101,14 +101,14 @@ $ git diff --cached
 ```
 
 **Actions:**
-1. Create branch: `git checkout -b johnmog-auth-validation`
-2. Generate message: `add user authentication validation`
-3. Commit: `git commit -m "add user authentication validation"`
+1. Create branch: `git checkout -b wm-auth-validation`
+2. Generate message: `Add user authentication validation`
+3. Commit: `git commit -m "Add user authentication validation"`
 
 **Output:**
 ```
-Created branch: johnmog-auth-validation
-Committed with message: add user authentication validation
+Created branch: wm-auth-validation
+Committed with message: Add user authentication validation
 ```
 
 ### Example 2: Bug Fix on Feature Branch
@@ -117,7 +117,7 @@ Committed with message: add user authentication validation
 **Current State:**
 ```bash
 $ git branch --show-current
-johnmog-performance
+wm-performance
 
 $ git diff --cached
 --- a/src/utils/cache.js
@@ -128,12 +128,12 @@ $ git diff --cached
 
 **Actions:**
 1. Stay on current branch (not main)
-2. Generate message: `fix cache undefined access`
-3. Commit: `git commit -m "fix cache undefined access"`
+2. Generate message: `Fix cache undefined access`
+3. Commit: `git commit -m "Fix cache undefined access"`
 
 **Output:**
 ```
-Committed with message: fix cache undefined access
+Committed with message: Fix cache undefined access
 ```
 
 ### Example 3: Refactoring on Main
@@ -158,14 +158,14 @@ $ git diff --cached
 ```
 
 **Actions:**
-1. Create branch: `git checkout -b johnmog-sentry-rollup`
-2. Generate message: `simplify exception rollup logic`
-3. Commit: `git commit -m "simplify exception rollup logic"`
+1. Create branch: `git checkout -b wm-sentry-rollup`
+2. Generate message: `Simplify exception rollup logic`
+3. Commit: `git commit -m "Simplify exception rollup logic"`
 
 **Output:**
 ```
-Created branch: johnmog-sentry-rollup
-Committed with message: simplify exception rollup logic
+Created branch: wm-sentry-rollup
+Committed with message: Simplify exception rollup logic
 ```
 
 ## Branch Naming Conventions
@@ -174,23 +174,23 @@ When creating branches from main, generate names that are:
 - **Simple**: 2-3 words, area + action/topic
 - **Concise**: Short but clear
 - **Lowercase**: All lowercase letters with hyphens
-- **Prefixed**: Always start with `johnmog-`
+- **Prefixed**: Always start with `wm-`
 
-**Format:** `johnmog-<area>-<change>`
+**Format:** `wm-<area>-<change>`
 
 **Good Examples:**
-- `johnmog-auth-validation`
-- `johnmog-cache-fix`
-- `johnmog-api-client`
-- `johnmog-sentry-rollup`
-- `johnmog-obs-logging`
-- `johnmog-deps-update`
+- `wm-auth-validation`
+- `wm-cache-fix`
+- `wm-api-client`
+- `wm-sentry-rollup`
+- `wm-obs-logging`
+- `wm-deps-update`
 
 **Avoid:**
-- Too vague: `johnmog-changes`, `johnmog-fix`
-- Too long: `johnmog-add-new-user-authentication-with-oauth`
-- Too detailed: `johnmog-refactor-exception-rollup-fingerprint-generation`
-- Action verbs in name: `johnmog-add-auth`, `johnmog-fix-cache`
+- Too vague: `wm-changes`, `wm-fix`
+- Too long: `wm-add-new-user-authentication-with-oauth`
+- Too detailed: `wm-refactor-exception-rollup-fingerprint-generation`
+- Action verbs in name: `wm-add-auth`, `wm-fix-cache`
 
 ## Error Handling
 
@@ -208,11 +208,11 @@ Please initialize with: git init
 
 **Branch creation fails:**
 ```
-Error: Branch 'johnmog-<name>' already exists.
+Error: Branch 'wm-<name>' already exists.
 Options:
-1. Switch to existing branch: git checkout johnmog-<name>
+1. Switch to existing branch: git checkout wm-<name>
 2. Choose a different branch name
-3. Delete existing branch: git branch -d johnmog-<name>
+3. Delete existing branch: git branch -d wm-<name>
 ```
 
 ## Best Practices
@@ -228,19 +228,19 @@ Options:
 
 **Good commit messages:**
 ```
-add login validation logic
-fix null pointer in cache lookup
-update API retry behavior
-remove unused rollup checks
-improve error logging detail
-refactor database connection pool
+Add login validation logic
+Fix null pointer in cache lookup
+Update API retry behavior
+Remove unused rollup checks
+Improve error logging detail
+Refactor database connection pool
 ```
 
 **Messages to avoid:**
 ```
-feat(auth): add login validation           ❌ uses conventional commit prefix
-Fixed bug in the cache system               ❌ capitalized, past tense
-refactoring the database connection logic   ❌ gerund form, too wordy
+feat(auth): add login validation            ❌ uses conventional commit prefix
+fixed bug in the cache system               ❌ not capitalized, past tense
+Refactoring the database connection logic   ❌ gerund form, too wordy
 WIP                                         ❌ not descriptive
-small fix                                   ❌ too vague
+Small fix                                   ❌ too vague
 ```

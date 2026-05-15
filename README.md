@@ -17,7 +17,7 @@ Standardized macOS machine setup using:
 One-liner from a bare machine:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/williammartin/dotfiles/johnmog-dotfiles-bootstrap/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/williammartin/dotfiles/main/install.sh | bash
 ```
 
 Manual:
