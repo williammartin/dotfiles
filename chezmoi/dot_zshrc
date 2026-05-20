@@ -13,6 +13,8 @@ if [[ ! -f "$ANTIDOTE_HOME/antidote.zsh" ]]; then
   git clone --depth=1 https://github.com/mattmc3/antidote.git "$ANTIDOTE_HOME"
 fi
 
+autoload -Uz compinit && compinit
+
 source "$ANTIDOTE_HOME/antidote.zsh"
 [[ -f "$ANTIDOTE_PLUGINS_FILE" ]] && antidote load "$ANTIDOTE_PLUGINS_FILE"
 
