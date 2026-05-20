@@ -15,3 +15,5 @@ fi
 
 source "$ANTIDOTE_HOME/antidote.zsh"
 [[ -f "$ANTIDOTE_PLUGINS_FILE" ]] && antidote load "$ANTIDOTE_PLUGINS_FILE"
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
